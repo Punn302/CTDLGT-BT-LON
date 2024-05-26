@@ -1,5 +1,10 @@
 #Khai bao toan cuc
+import llist
+from llist import dllist
 
+lst = llist.dllist(['first', 'second', 'third'])
+for value in lst:
+    print(value)
 
 
 
