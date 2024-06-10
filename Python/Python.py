@@ -209,11 +209,24 @@ if __name__ == "__main__":
     delatpos(5)
     traverse()
 
+    print("Is 9 in the list:", search(9))
 
+    print("Reverse traverse:")
+    reverse_traverse()
+
+    sort()
+    print("Doubly Linked List after sorting:")
+    traverse()
 
 
 #Tim kiem thong tin
-
+def search(key):
+    ptr = head
+    while ptr is not None:
+        if ptr.key == key:
+            return True
+        ptr = ptr.next
+    return False
 
 
 
@@ -223,7 +236,24 @@ if __name__ == "__main__":
 
 
 #Duyet va sap xep cac phan tu
+def reverse_traverse():
+    ptr = tail
+    while ptr is not None:
+        print(ptr.key, end=" ")
+        ptr = ptr.prev
+    print()
 
+def sort():
+    if head is None:
+        return
+    current = head
+    while current.next is not None:
+        temp = current.next
+        while temp is not None:
+            if current.key > temp.key:
+                current.key, temp.key = temp.key, current.key
+            temp = temp.next
+        current = current.next
 
 
 
